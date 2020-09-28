@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     end
 
     def show
-
+        @user = User.find_by(id: params[:id]) #can this be tied to current_user?
     end
 
     def edit
