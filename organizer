@@ -17,6 +17,7 @@
         :last_name
         :email
         :mobile_number
+        :password_digest
 
     Setup Accounts database
         :org_name
@@ -40,7 +41,7 @@
     Session
     OAuth
     Design
-    
+
 
 
 
