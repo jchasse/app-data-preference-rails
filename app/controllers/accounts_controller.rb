@@ -13,7 +13,11 @@ class AccountsController < ApplicationController
     end
 
     def create
-        
+        if @account = Account.create(account_params)
+            redirect_to account_path(@account)
+          else
+            render 'new'
+        end
     end
 
     def show
