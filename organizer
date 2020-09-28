@@ -1,0 +1,46 @@
+1 - Models
+    Setup model User
+        has_many :digitalprints	
+        has_many :accounts, through: :digitalprints
+
+    Setup model Account
+        has_many :digitalprints	
+        has_many users, through: :digitalprints
+
+    Setup model Digitalprint
+        belongs_to :user
+        belongs_to :account
+    
+2 - Database
+    Setup Users database
+        :first_name
+        :last_name
+        :email
+        :mobile_number
+
+    Setup Accounts database
+        :org_name
+        :website
+        :toll_free_number
+
+    Setup Digitalprints database
+        :kind
+        :user_id
+        :account_id    
+
+3 - Controllers
+    Users 
+        :new, :create, :show, :edit, :update, :destroy
+    Accounts
+        :index, :new, :create, :show, :edit, :update, :destroy
+    Digitalprints
+        :new, :create
+
+4 - Views
+    Session
+    OAuth
+    Design
+    
+
+
+
