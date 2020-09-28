@@ -25,7 +25,7 @@ class AccountsController < ApplicationController
     end
 
     def edit
-
+        @account = Account.find_by(id: params[:id])
     end
 
     def update
