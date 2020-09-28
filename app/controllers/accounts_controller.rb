@@ -29,7 +29,12 @@ class AccountsController < ApplicationController
     end
 
     def update
-
+        @account = Account.find_by(id: params[:id])
+        if @acccount.update(account_params)
+            redirect_to account_path(@account)
+        else
+            render 'edit'
+        end
     end
 
     def destroy
