@@ -1,28 +1,3 @@
 This is the new accounts page.
 
-<%= form_for @account do |f| %>
-
-  <div>
-    <%= f.label :org_name %>
-    <br>
-    <%= f.text_field :org_name %>
-  </div>
-
-  <div>
-    <%= f.label :website %>
-    <br>
-    <%= f.text_field :website %>
-  </div>
-
-  <div>
-    <%= f.label :toll_free_number %>
-    <br>
-    <%= f.text_field :toll_free_number %>
-  </div>
-
-  <div>
-    <br/>
-    <%= f.submit %>
-  </div>
-
-<% end %>
+<%= render 'form' %> 
