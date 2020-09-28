@@ -9,11 +9,11 @@ class AccountsController < ApplicationController
     end
 
     def new
-
+        @account = Account.new
     end
 
     def create
-
+        
     end
 
     def show
