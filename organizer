@@ -37,8 +37,12 @@
     Digitalprints
         :new, :create
 
-4 - Views
-    Session
+4 - Static/Home View
+    
+    
+    
+    
+# - Session
     OAuth
     Design
 
