@@ -28,5 +28,13 @@ class AccountsController < ApplicationController
 
     end
 
+    private
 
+    def account_params
+        params.require(:account).permit(
+            :org_name, 
+            :website, 
+            :toll_free_number, 
+        )
+    end
 end
