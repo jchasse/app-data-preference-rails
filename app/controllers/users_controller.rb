@@ -18,11 +18,16 @@ class UsersController < ApplicationController
     end
 
     def edit
-
+        @user = User.find_by(id: params[:id]) #can this be tied to current_user?
     end
 
     def update
-
+        @user = User.find_by(id: params[:id])
+        if @user.update(user_params)
+            redirect_to user_path(@user)
+        else
+            render 'edit'
+        end
     end
 
     def destroy
