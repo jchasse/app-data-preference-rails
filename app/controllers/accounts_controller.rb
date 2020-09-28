@@ -1,7 +1,11 @@
 class AccountsController < ApplicationController
 
     def index
-
+        if params[:user_id]
+            @accounts = User.find_by(id: params[:user_id]).accounts
+          else
+            @accounts = Account.all
+        end
     end
 
     def new
