@@ -1,0 +1,2 @@
+class DigitalprintsController < ApplicationController
+end
