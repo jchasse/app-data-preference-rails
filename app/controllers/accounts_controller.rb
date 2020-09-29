@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+    before_action :confirm_logged_in
 
     def index
         if params[:user_id]

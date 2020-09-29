@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
         User.find_by(id: session[:user_id])
     end
 
+    def confirm_logged_in
+        redirect_to root_path if !current_user
+    end
+
 end
