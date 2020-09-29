@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_logged_in
-        redirect_to accounts_path
+        redirect_to accounts_path if current_user
     end
-
 
 end

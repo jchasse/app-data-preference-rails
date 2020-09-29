@@ -20,9 +20,15 @@
   
           <ul class="nav navbar-nav">
             <li class="active"><%=link_to "HOME", root_path%></li>
-            <li> <%= link_to "Signup", signup_path %> </li>
-            <li> <%= link_to "New Account", new_account_path %> </li>
-            <li> <%= link_to "Account Index", accounts_path %> </li>
+            <% if !current_user %>
+              <li> <%= link_to "Signup", signup_path %> </li>
+              <li> <%= link_to "Login", login_path %> </li>
+            <% end %>
+            <% if current_user %>
+              <li> <%= link_to "Your Accounts", accounts_path %> </li>
+              <li> <%= link_to "New Account", new_account_path %> </li>
+              <li> <%= link_to "Logout", logout_path, method: :post %> </li>
+            <% end %>
           </ul>
   
         </div>
