@@ -39,6 +39,17 @@
         :new, :create
 
 4 - Static/Home View
+
+5 - Session Controller and views
+
+6 - Seed data
+
+7 - Helper Methods & Site security
+    before_action
+    helper_methods
+    has_secure_password
+
+8 - 
     
     
     
