@@ -18,6 +18,7 @@
         :email
         :mobile_number
         :password_digest
+        :admin
 
     Setup Accounts database
         :org_name
