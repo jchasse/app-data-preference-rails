@@ -18,6 +18,11 @@
     <%= f.text_field :toll_free_number %>
   </div>
 
+    <%=f.fields_for :digitalprints do |d|%>
+        <%=d.label :kind%>
+        <%=d.text_field :kind %><br>
+    <%end%>
+
   <div>
     <br/>
     <%= f.submit %>
