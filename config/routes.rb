@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   root 'static#home'
 
   # Sessions
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  post '/logout' => 'session#destroy'
 
   # Models
    get '/signup' => 'users#new'
