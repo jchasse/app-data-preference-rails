@@ -1,1 +1,26 @@
 This is the home page.<br><br>
+
+<div id="slides" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1"></li>
+        <li data-target="#slides" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <%= image_tag "background.png" %>
+            <div class="carousel-caption">
+                <h1 class="display-2"> Valubl</h1>
+                <h3> Manage your data </h3>
+                <button type="button" class="btn btn-outline-light btn-lg"> VIEW </button>
+                <button type="button" class="btn btn-primary btn-lg"> Get started </button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <%= image_tag "background2.png" %>
+        </div>
+        <div class="carousel-item">
+            <%= image_tag "background3.png" %>
+        </div>
+    </div>
+</div>

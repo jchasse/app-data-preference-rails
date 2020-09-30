@@ -24,10 +24,10 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
-        <img src="tech_logo.png" width="30" height="30" alt="" loading="lazy"></a>
+        <%= image_tag "valubl_logo4.png", size: "180x40"%></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"> </span>
       </button>
@@ -82,5 +82,43 @@
 
 
     <%= yield %>
+
+    <footer>
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <%= image_tag "valubl_logo4.png", size: "180x40"%></a>
+            <hr class="light">
+            <p> 555-555-5555</p>
+            <p> email@test.com</p>
+            <p> 100 Pine Street</p>
+            <p> Dallas, TX 75230 </p>
+          </div>
+          <div class="col-md-4">
+              <hr class="light">
+              <h5> Our hours </h5>
+              <hr class="light">
+              <p> Monday: 9am - 5pm </p>
+              <p> Saturday: 10am - 5pm </p>
+              <p> Sunday: closed </p>
+          </div>
+          <div class="col-md-4">
+            <hr class="light">
+            <h5> Our Services </h5>
+            <hr class="light">
+            <p> Comment </p>
+            <p> Comment </p>
+            <p> Comment </p>
+          </div>
+          <div class="col-12">
+            <hr class="light">
+            <h5> &copy; Valubl.com </h5>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+
   </body>
 </html>
