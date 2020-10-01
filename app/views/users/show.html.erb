@@ -1,5 +1,19 @@
-This is the show user page. <br><br>
-
-<%= @user.first_name %> <%= @user.last_name %> <br><br>
-<%= @user.email %><br><br>
-<%= @user.mobile_number %><br><br>
+<div class="container-fluid padding main-user-show">
+    <div class="row text-center">
+        <div class="col">
+            <h5> User Information </h5>
+            <hr class="light">
+            <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+            <p> <%= @user.email %> </p>
+            <p> <%= @user.mobile_number %> </p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <%= button_to 'Edit User', edit_user_path(@user), class:"btn btn-primary" %>
+        </div>
+        <div class="col-md-6"> 
+            <%= button_to 'Delete User', user_path(@user), method: :delete, class:"btn btn-primary" %> 
+        </div>
+    </div>
+</div>
