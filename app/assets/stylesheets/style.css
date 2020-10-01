@@ -102,15 +102,23 @@ hr.light-100 {
 
 /* account */
 
-.card {
-    width: 600px;
+.card-container {
+    width: 30%;
     margin: auto;
     background-color: #343A40;
-    color: white;
-    margin: 1rem;
+    padding: 1rem;
 }
 
+.card {
+    width: 80%;
+    background-color: #ffffff;
+    color: #343A40;
+    margin: auto;
+}
 
+.card-title {
+    color: white !important;
+}
 
 
 

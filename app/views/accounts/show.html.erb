@@ -3,3 +3,25 @@ This is the show accounts page.
 <%= @account.org_name %>
 <%= @account.website %>
 <%= @account.toll_free_number %>
+
+
+
+<div class="container-fluid padding main-user-show">
+    <div class="row text-center">
+        <div class="col">
+            <h5> Account Information </h5>
+            <hr class="light">
+            <p> <%= @account.org_name %> </p>
+            <p> <%= @account.website %> </p>
+            <p> <%= @account.toll_free_number %> </p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <%= button_to 'Edit Account', edit_account_path(@account), method: :get, class:"btn btn-outline-light" %>
+        </div>
+        <div class="col-md-6"> 
+            <%= button_to 'Delete Account', account_path(@account), method: :delete, class:"btn btn-primary" %> 
+        </div>
+    </div>
+</div>

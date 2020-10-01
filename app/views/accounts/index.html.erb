@@ -1,22 +1,33 @@
+<div> . </div>
 
 <% @accounts.each do |account| %>
 
-<div class="card text-center">
-    <div class="card-body">
-      <h5 class="card-title"> <%= account.org_name %> </h5>
-      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-      <p class="card-text"> <%= account.website %> </p>
-      <p class="card-text"> <%= account.toll_free_number %> </p>
-      
-      <div class="row text-center">
-            <div class="col-md-6">
-                <%= button_to 'Edit Account', edit_account_path(account), method: :get, class:"btn btn-primary" %>
+    <div class="card-container text-center">   
+        <div class="card text-center">
+            <div class="card-header">
+                <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
             </div>
-            <div class="col-md-6"> 
-                <%= button_to 'Delete Account', account_path(account), method: :delete, class:"btn btn-primary" %> 
+            <div class="card-body">
+                <p class="card-text"> <%= account.website %> </p>
+                <p class="card-text"> <%= account.toll_free_number %> </p>
             </div>
+
+            <div class="card-footer">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1"> Right to Know </label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                    <label class="custom-control-label" for="customSwitch2"> Right to Delete </label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                    <label class="custom-control-label" for="customSwitch3"> Right to Opt Out</label>
+                </div>
+            </div>
+
         </div>
-    </div>
-</div>
+    </div> 
 
 <% end %>
