@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 @import 'bootstrap/dist/css/bootstrap';
 
+/* entire website  */
 html, body {
     height: 100%;
     width: 100%;
     font-family: 'Poppins', sans-serif;
     color: #222;
 }
+.form-control:focus {
+    border-color: #F0190B;
+  }
+
+/* navigation bar */
+
 .navbar {
     padding: .8rem;  
 }

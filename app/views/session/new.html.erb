@@ -1,4 +1,4 @@
-This is the new session page.
+<!-- This is the new session page.
 
 <%= form_tag login_path, method: :post do %>
 
@@ -10,4 +10,26 @@ This is the new session page.
 
 <%= submit_tag "Log In" %>
 
-<% end %>
+<% end %> -->
+
+
+
+<h3 class="h3 text-center user-form"> Login </h3>
+
+<form action="" class="main-form needs-validation" novalidate>
+    <%= form_tag login_path, method: :post do %>
+    <div class="form-group">   
+        <%= text_field_tag :email, "Email", class: "form-control" %>
+        <div class="invalid-feedback"> Email not found. </div>
+    </div>
+    <div class="form-group">   
+        <%= password_field_tag :password, "", class: "form-control" %>
+        <div class="invalid-feedback"> Password not valid. </div>
+        <small class="text-muted"> Enter password.</small>
+    </div>
+    <div class="text-center"> 
+        <%= submit_tag "Log In", class:"btn btn-primary" %>
+    </div
+
+    <% end %>
+</form> 
