@@ -25,65 +25,38 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <%= image_tag "valubl_logo4.png", size: "180x40"%></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"> </span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <% if !current_user %>
-            <li class="nav-item">
-              <%= link_to "SIGN UP", signup_path, class: "nav-link" %> </li>
-            <li class="nav-item" >
-              <%= link_to "LOGIN", login_path, class: "nav-link" %> </li>
-          <% end %>
-
-          <% if current_user %>
-            <li class="nav-item" >
-              <%= link_to "YOUR ACCOUNTS", accounts_path, class: "nav-link" %> </li>
-            <li class="nav-item" >
-              <%= link_to "NEW ACCOUNT", new_account_path, class: "nav-link" %> </li>
-            <li class="nav-item" >
-              <%= link_to "LOGOUT", logout_path, method: :post, class: "nav-link" %> </li>
-          <% end %>
-        </ul>
-
-      </div>
-    </div>
-    </nav>
-
-    <!-- Below was referenced in guidance from https://www.mashrurhossain.com/blog/rails6bootstrap4 -->
-
-    <!-- <header class="navbar  navbar-inverse">
-      <div class="navbar-class">
-        <div class="container"> -->
-  
-  
-        <!-- Collect the nav links, forms, and other content for toggling -->
-  
-          <!-- <ul class="nav navbar-nav">
-            <li class="active"><%=link_to "HOME", root_path%></li>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <%= image_tag "valubl_logo4.png", size: "180x40"%></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
             <% if !current_user %>
-              <li> <%= link_to "Signup", signup_path %> </li>
-              <li> <%= link_to "Login", login_path %> </li>
+              <li class="nav-item">
+                <%= link_to "SIGN UP", signup_path, class: "nav-link" %> </li>
+              <li class="nav-item" >
+                <%= link_to "LOGIN", login_path, class: "nav-link" %> </li>
             <% end %>
+
             <% if current_user %>
-              <li> <%= link_to "Your Accounts", accounts_path %> </li>
-              <li> <%= link_to "New Account", new_account_path %> </li>
-              <li> <%= link_to "Logout", logout_path, method: :post %> </li>
+              <li class="nav-item" >
+                <%= link_to "YOUR ACCOUNTS", accounts_path, class: "nav-link" %> </li>
+              <li class="nav-item" >
+                <%= link_to "NEW ACCOUNT", new_account_path, class: "nav-link" %> </li>
+              <li class="nav-item" >
+                <%= link_to "LOGOUT", logout_path, method: :post, class: "nav-link" %> </li>
             <% end %>
           </ul>
-  
         </div>
-      </div> -->
-    <!-- </header> -->
-
+      </div>
+    </nav>
 
     <%= yield %>
 
-    <footer>
+    <footer class="footer fixed-bottom">
+
       <div class="container-fluid padding">
         <div class="row text-center">
           <div class="col-md-4">
@@ -111,14 +84,13 @@
             <p> Comment </p>
           </div>
           <div class="col-12">
-            <hr class="light">
+            <hr class="light-100">
             <h5> &copy; Valubl.com </h5>
           </div>
         </div>
       </div>
 
     </footer>
-
 
   </body>
 </html>

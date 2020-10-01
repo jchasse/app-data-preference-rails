@@ -1,44 +1,36 @@
-<%= form_for @user do |f| %>
+<h3 class="h3 text-center user-form"> <%= type_form %> </h3>
 
-  <div>
-    <%= f.label :first_name %>
-    <br>
-    <%= f.text_field :first_name %>
-  </div>
+<form action="" class="main-form needs-validation" novalidate>
+    <%= form_for @user do |f| %>
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>
+            </div>
+            <div class="col">
+                <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">   
+        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+        <div class="invalid-feedback"> Email not valid. </div>
+    </div>
+    <div class="form-group">   
+        <%= f.telephone_field :mobile_number, class: "form-control", placeholder: "Mobile Phone Number" %>
+        <div class="invalid-feedback"> Phone not valid. </div>
+    </div>
+    <div class="form-group">   
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+        <div class="invalid-feedback"> Password not valid. </div>
+    </div>
+    <div class="form-group">   
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+        <div class="invalid-feedback"> Password confirmation does not match. </div>
+    </div>
+    <div class="text-center"> 
+        <%= f.submit class:"btn btn-primary" %>
+    </div
 
-  <div>
-    <%= f.label :last_name %>
-    <br>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div>
-    <%= f.label :email %>
-    <br>
-    <%= f.text_field :email %>
-  </div>
-
-  <div>
-    <%= f.label :mobile_number %>
-    <br>
-    <%= f.text_field :mobile_number %>
-  </div>
-
-  <div>
-    <%= f.label :password %>
-    <br>
-    <%= f.password_field :password %>
-  </div>
-
-  <div>
-    <%= f.label :password, "Password Confirmation" %>
-    <br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div>
-    <br/>
-    <%= f.submit %>
-  </div>
-
-<% end %>
+    <% end %>
+</form> 
