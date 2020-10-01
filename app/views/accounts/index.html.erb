@@ -1,1 +1,22 @@
-This is the index accounts page.
+
+<% @accounts.each do |account| %>
+
+<div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title"> <%= account.org_name %> </h5>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+      <p class="card-text"> <%= account.website %> </p>
+      <p class="card-text"> <%= account.toll_free_number %> </p>
+      
+      <div class="row text-center">
+            <div class="col-md-6">
+                <%= button_to 'Edit Account', edit_account_path(account), method: :get, class:"btn btn-primary" %>
+            </div>
+            <div class="col-md-6"> 
+                <%= button_to 'Delete Account', account_path(account), method: :delete, class:"btn btn-primary" %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<% end %>

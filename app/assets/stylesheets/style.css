@@ -75,7 +75,7 @@ hr.light-100 {
     margin-bottom: 1rem;
 }
 
-/* user form */
+/* user */
 
 .main-form {
     width:  600px;
@@ -90,8 +90,6 @@ hr.light-100 {
     color: #343A40
 }
 
-/* user show */
-
 .main-user-show {
     width:  600px;
     margin: auto;
@@ -102,7 +100,15 @@ hr.light-100 {
     color: white;
 }
 
+/* account */
 
+.card {
+    width: 600px;
+    margin: auto;
+    background-color: #343A40;
+    color: white;
+    margin: 1rem;
+}
 
 
 /*---Media Queries --*/
