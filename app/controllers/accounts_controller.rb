@@ -11,10 +11,14 @@ class AccountsController < ApplicationController
 
     def new
         @account = Account.new
+        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media Username"]
+        @account.digitalprints.build
     end
 
     def create
-        if @account = Account.create(account_params)
+        byebug
+        @account = Account.create(account_params)
+        if @account.save
             redirect_to account_path(@account)
           else
             render 'new'
@@ -50,7 +54,8 @@ class AccountsController < ApplicationController
         params.require(:account).permit(
             :org_name, 
             :website, 
-            :toll_free_number, 
+            :toll_free_number,
+            measurements_attributes: [:kind] 
         )
     end
 end

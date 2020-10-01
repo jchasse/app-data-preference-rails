@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   # Models
    get '/signup' => 'users#new'
-  resources :users, only: [:create, :show, :edit, :update, :destroy]
+  resources :users do
+    resources :accounts
+  end
 
-  resources :accounts
   
   resources :digitalprints, only: [:new, :create]
 

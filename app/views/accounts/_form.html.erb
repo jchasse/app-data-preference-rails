@@ -3,24 +3,30 @@
 <%= form_for @account, html: {class: "main-form"} do |f| %>
     
     <div class="form-group">
-    <%= f.text_field :org_name, list: "org_names_autocomplete" %>
-        <datalist id="org_names_autocomplete">
-            <% Account.all.each do |account| %>
-            <option value= <%= "#{account.org_name}" %>>
-            <% end %>
-        </datalist>
+        <%= f.text_field :org_name, list: "org_names_autocomplete" %>
+            <datalist id="org_names_autocomplete">
+                <% Account.all.each do |account| %>
+                <option value= <%= "#{account.org_name}" %>>
+                <% end %>
+            </datalist>
     </div>
 
     <div class="form-group">   
-    <%= f.text_field :website, class: "form-control", placeholder: "Website" %>
+        <%= f.text_field :website, class: "form-control", placeholder: "Website" %>
     </div>
 
     <div class="form-group">   
-    <%= f.text_field :toll_free_number, class: "form-control", placeholder: "Contact Phone Number" %>
+        <%= f.text_field :toll_free_number, class: "form-control", placeholder: "Contact Phone Number" %>
+    </div>
+
+    <div class="form-group"> 
+        <%= f.fields_for :digitalprints, html: {class:"btn btn-secondary dropdown-toggle"} do |d| %>
+            <%= d.select :kind, @digitalprints %>
+        <% end %>
     </div>
 
     <div class="text-center"> 
-    <%= f.submit class:"btn btn-primary" %>
+        <%= f.submit class:"btn btn-primary" %>
     </div
 
 <% end %>
