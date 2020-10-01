@@ -1,3 +1,33 @@
+<h3 class="h3 text-center account-form"> <%= type_form %> </h3>
+
+<%= form_for @account, html: {class: "main-form"} do |f| %>
+    
+    <div class="form-group">
+    <%= f.text_field :org_name, list: "org_names_autocomplete" %>
+        <datalist id="org_names_autocomplete">
+            <% Account.all.each do |account| %>
+            <option value= <%= "#{account.org_name}" %>>
+            <% end %>
+        </datalist>
+    </div>
+
+    <div class="form-group">   
+    <%= f.text_field :website, class: "form-control", placeholder: "Website" %>
+    </div>
+
+    <div class="form-group">   
+    <%= f.text_field :toll_free_number, class: "form-control", placeholder: "Contact Phone Number" %>
+    </div>
+
+    <div class="text-center"> 
+    <%= f.submit class:"btn btn-primary" %>
+    </div
+
+<% end %>
+
+
+
+<!-- 
 <%= form_for @account do |f| %>
 
 Select a popular account: <br>
@@ -32,4 +62,4 @@ Or enter in a new account: <br>
     <%= f.submit %>
   </div>
 
-<% end %>
+<% end %> -->

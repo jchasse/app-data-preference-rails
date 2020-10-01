@@ -14,8 +14,8 @@
 
 <h3 class="h3 text-center user-form"> Login </h3>
 
-<form action="" class="main-form needs-validation" novalidate>
-    <%= form_tag login_path, method: :post do %>
+<!-- <form action="" class="main-form needs-validation" novalidate> -->
+<%= form_tag login_path, method: :post, class: "main-form" do %>
     <div class="form-group">   
         <%= text_field_tag :email, "Email", class: "form-control" %>
         <div class="invalid-feedback"> Email not found. </div>
@@ -29,5 +29,4 @@
         <%= submit_tag "Log In", class:"btn btn-primary" %>
     </div
 
-    <% end %>
-</form> 
+<% end %>
