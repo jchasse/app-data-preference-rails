@@ -1,11 +1,9 @@
-<%=render partial: "application/messages", locals: {danger_messages: @danger_messages || [], success_messages: @success_messages || []  } %>
+<% if @accounts == [] %>
 
-<% if @accounts.nil? %>
-
-    <h3 class="h3 text-center"> You have not loaded digitalprint accounts. Get started <%= link_to "here", new_account_path %>! </h3>
+    <h5 class="h5 text-center empty-index"> You have not loaded any digitalprints. Get started <%= link_to "here", new_account_path %>! </h5>
 
 <% else %>
-    <h3 class="h3 text-center"> Add new account <%= link_to "here", new_account_path %>! </h3>
+    <h5 class="h5 text-center empty-index"> Add new account <%= link_to "here", new_account_path %>! </h5>
 
     <% @accounts.each do |account| %>
 

@@ -14,10 +14,13 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <%= button_to 'Edit Account', edit_account_path(@account), method: :get, class:"btn btn-outline-light" %>
         </div>
-        <div class="col-md-6"> 
+        <div class="col-md-4"> 
+            "Add More"
+        </div>
+        <div class="col-md-4"> 
             <%= button_to 'Delete Account', account_path(@account), method: :delete, class:"btn btn-primary" %> 
         </div>
     </div>
