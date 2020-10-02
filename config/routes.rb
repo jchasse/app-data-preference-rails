@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   # Sessions
   get '/login' => 'session#new'
-  post '/login' => 'session#create'
+  post '/login' => 'session#create' 
   post '/logout' => 'session#destroy'
+
+  get '/auth/facebook/callback' => "session#create_with_fb"
 
   # Models
    get '/signup' => 'users#new'

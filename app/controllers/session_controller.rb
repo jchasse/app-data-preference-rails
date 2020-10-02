@@ -11,13 +11,31 @@ class SessionController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
+            @errors = ["Username or password incorrect"]
             render 'new'
         end
     end
 
+    def create_with_fb
+        @user = User.find_or_create_by(email: auth['email']) do |u|
+            u.password = 'password' #update to random password generator before production
+        end
+        @user.save
+        session[:user_id] = @user.id
+    
+        redirect_to user_path(@user)
+    end
+
+
     def destroy
         session.delete("user_id")
         redirect_to root_path
+    end
+
+    private
+
+    def auth
+      request.env['omniauth.auth']["info"]
     end
 
 end
