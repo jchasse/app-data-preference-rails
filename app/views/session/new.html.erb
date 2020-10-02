@@ -11,8 +11,14 @@
         <div class="invalid-feedback"> Password not valid. </div>
         <small class="text-muted"> Enter password.</small>
     </div>
-    <div class="text-center"> 
-        <%= submit_tag "Log In", class:"btn btn-primary" %>
-    </div
+
+    <div class="row text-center">
+        <div class="col-md-6">
+            <%= submit_tag "Log In", class:"btn btn-primary" %>
+        </div>
+        <div class="col-md-6"> 
+            <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+        </div>
+    </div>
 
 <% end %>
