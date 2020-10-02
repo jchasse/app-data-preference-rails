@@ -1,33 +1,41 @@
 <div> . </div>
 
-<% @accounts.each do |account| %>
+<% if @accounts.nil? %>
 
-    <div class="card-container text-center">   
-        <div class="card text-center">
-            <div class="card-header">
-                <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
-            </div>
-            <div class="card-body">
-                <p class="card-text"> <%= account.website %> </p>
-                <p class="card-text"> <%= account.toll_free_number %> </p>
-            </div>
+    <h3 class="h3 text-center"> You have not loaded any accounts you need help with. </h3>
+    <h3 class="h3 text-center">   Get started <%= link_to "here", new_account_path %>! </h3>
 
-            <div class="card-footer">
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                    <label class="custom-control-label" for="customSwitch1"> Right to Know </label>
+<% else %>
+
+    <% @accounts.each do |account| %>
+
+        <div class="card-container text-center">   
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
                 </div>
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                    <label class="custom-control-label" for="customSwitch2"> Right to Delete </label>
+                <div class="card-body">
+                    <p class="card-text"> <%= account.website %> </p>
+                    <p class="card-text"> <%= account.toll_free_number %> </p>
                 </div>
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                    <label class="custom-control-label" for="customSwitch3"> Right to Opt Out</label>
+
+                <div class="card-footer">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1"> Right to Know </label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                        <label class="custom-control-label" for="customSwitch2"> Right to Delete </label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                        <label class="custom-control-label" for="customSwitch3"> Right to Opt Out</label>
+                    </div>
                 </div>
+
             </div>
+        </div> 
 
-        </div>
-    </div> 
-
+    <% end %>
 <% end %>

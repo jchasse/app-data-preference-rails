@@ -11,11 +11,15 @@ Rails.application.routes.draw do
 
   # Models
    get '/signup' => 'users#new'
-  resources :users do
+  
+   resources :users do
     resources :accounts
   end
 
-  
-  resources :digitalprints, only: [:new, :create]
+  resources :accounts do
+    resources :digitalprints
+  end
+
+  resources :digitalprints
 
 end

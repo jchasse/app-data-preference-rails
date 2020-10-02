@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(first_name: "Max", last_name: "Charles", email: "max@test.com", mobile_number: "123-456-7890", password: "max")
+@user = User.create(first_name: "Max", last_name: "Charles", email: "max@test.com", mobile_number: "123-456-7890", password: "max")
 Account.create(org_name: "Google", website: "www.google.com", toll_free_number: "1-800-123-4567")
 Account.create(org_name: "Facebook", website: "www.facebook.com", toll_free_number: "1-800-123-4567")
+# @user.digitalprints.create(kind: "Email", account_id: )
 
 
 # DATA = {

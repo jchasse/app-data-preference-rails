@@ -84,10 +84,10 @@ hr.light-100 {
     padding: 2rem;
     margin-bottom: 2rem;
 }
-.user-form {
+.user-heading {
     margin-top: 2rem;
     margin-bottom: .5rem;
-    color: #343A40
+    color: #343A40;
 }
 
 .main-user-show {

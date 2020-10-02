@@ -1,4 +1,4 @@
-<h3 class="h3 text-center account-form"> <%= type_form %> </h3>
+<h3 class="h3 text-center user-heading"> <%= type_form %> </h3>
 
 <%= form_for @account, html: {class: "main-form"} do |f| %>
     
@@ -22,6 +22,7 @@
     <div class="form-group"> 
         <%= f.fields_for :digitalprints, html: {class:"btn btn-secondary dropdown-toggle"} do |d| %>
             <%= d.select :kind, @digitalprints %>
+            <%= d.hidden_field :user_id %>
         <% end %>
     </div>
 

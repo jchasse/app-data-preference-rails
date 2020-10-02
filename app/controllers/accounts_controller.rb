@@ -3,16 +3,15 @@ class AccountsController < ApplicationController
 
     def index
         if params[:user_id]
+            byebug
             @accounts = User.find_by(id: params[:user_id]).accounts
-          else
-            @accounts = Account.all
         end
     end
 
     def new
         @account = Account.new
         @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media Username"]
-        @account.digitalprints.build
+        @account.digitalprints.build(user_id: session[:user_id])
     end
 
     def create
@@ -55,7 +54,7 @@ class AccountsController < ApplicationController
             :org_name, 
             :website, 
             :toll_free_number,
-            measurements_attributes: [:kind] 
+            digitalprints_attributes: [:kind, :user_id] 
         )
     end
 end
