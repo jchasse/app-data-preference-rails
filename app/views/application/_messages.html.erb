@@ -1,3 +1,11 @@
-<% messages.each do |m|%>
-  <li><%=m%></li>
-<%end%>
+<% success_messages.each do |m| %>
+  <div class="alert alert-success" role="alert">
+    <li><%= m %></li>
+  </div>
+<% end %>
+
+<% danger_messages.each do |m| %>
+  <div class="alert alert-danger" role="alert">
+    <li><%= m %></li>
+  </div>
+<% end %>

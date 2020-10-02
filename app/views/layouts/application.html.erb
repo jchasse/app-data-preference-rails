@@ -38,13 +38,11 @@
                 <%= link_to "SIGN UP", signup_path, class: "nav-link" %> </li>
               <li class="nav-item" >
                 <%= link_to "LOGIN", login_path, class: "nav-link" %> </li>
-            <% end %>
-
-            <% if current_user %>
+            <% else %>
               <li class="nav-item" >
-                <%= link_to "YOUR ACCOUNTS", accounts_path, class: "nav-link" %> </li>
-              <li class="nav-item" >
-                <%= link_to "NEW ACCOUNT", new_account_path, class: "nav-link" %> </li>
+                <%= link_to "DIGITALPRINTS", accounts_path, class: "nav-link" %> </li>
+                <li class="nav-item" >
+                  <%= link_to "MY ACCOUNT", user_path(current_user), class: "nav-link" %> </li>
               <li class="nav-item" >
                 <%= link_to "LOGOUT", logout_path, method: :post, class: "nav-link" %> </li>
             <% end %>

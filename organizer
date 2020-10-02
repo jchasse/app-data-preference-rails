@@ -1,3 +1,8 @@
+Questions:
+- Fields_for not persisted...
+- Current User in Layout
+
+
 1 - Models
     Setup model User
         has_many :digitalprints	

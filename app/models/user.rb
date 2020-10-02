@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_many :digitalprints	
     has_many :accounts, through: :digitalprints
+    validates_presence_of :email
+    validates_uniqueness_of :email
     has_secure_password
 
 

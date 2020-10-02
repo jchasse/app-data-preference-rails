@@ -6,10 +6,12 @@ class UsersController < ApplicationController
     end
 
     def create
+        byebug
         if @user = User.create(user_params)
             session[:user_id] = @user.id
             redirect_to accounts_path
-          else
+        else
+            @errors = @user.errors.full_messages
             render 'new'
         end
     end

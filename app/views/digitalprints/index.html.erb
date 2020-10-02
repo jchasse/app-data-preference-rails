@@ -1,21 +1,26 @@
-<div> . </div>
 
-<% if @accounts.nil? %>
+<%=form_tag digitalprints_path, method: :get do %>
+    <%=label_tag "Search by kind"%>
+    <%=text_field_tag :search%>
+    <%=submit_tag :search%>
+<%end%>
 
-    <h3 class="h3 text-center"> You have not loaded digitalprint accounts. Get started <%= link_to "here", new_account_path %>! </h3>
+<% if @digitalprints.nil? || @digitalprints == [] %>
+
+    <h3 class="h3 text-center"> You have not loaded any digitalprints. Get started <%= link_to "here", new_account_path %>! </h3>
 
 <% else %>
-    <h3 class="h3 text-center"> Add new account <%= link_to "here", new_account_path %>! </h3>
 
-    <% @accounts.each do |account| %>
+    <% @digitalprints.each do |digitalprint| %>
 
         <div class="card-container text-center">   
             <div class="card text-center">
                 <div class="card-header">
-                    <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
+                    <h5 class="card-title"> <%= digitalprint.kind %> </h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text"> <%= account.website %> </p>
+                    <p class="card-text"> <%= digitalprint.account.org_name %> </p>
+                    <p class="card-text"> <%= digitalprint.account.website %> </p>
                     <p class="card-text"> <%= account.toll_free_number %> </p>
                 </div>
 
@@ -36,6 +41,6 @@
 
             </div>
         </div> 
-
     <% end %>
+
 <% end %>

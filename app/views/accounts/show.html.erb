@@ -7,6 +7,10 @@
             <p> <%= @account.website %> </p>
             <p> <%= @account.toll_free_number %> </p>
             <hr class="light">
+            <h5> Digital Footprint </h5>
+            <% @account.digitalprints.each do|d| %>
+                <p> <%= d.kind %> </p>
+            <% end%>
         </div>
     </div>
     <div class="row text-center">
