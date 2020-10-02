@@ -7,9 +7,9 @@ class SessionController < ApplicationController
 
     def create
         @user = User.find_by(email: params[:email])
-        if @user.authenticate(params[:password])
+        if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to accounts_path
         else
             @errors = ["Username or password incorrect"]
             render 'new'
@@ -23,7 +23,7 @@ class SessionController < ApplicationController
         @user.save
         session[:user_id] = @user.id
     
-        redirect_to user_path(@user)
+        redirect_to accounts_path
     end
 
 
