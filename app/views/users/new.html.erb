@@ -1,1 +1,3 @@
+<%=render partial: "application/messages", locals: {danger_messages: @danger_messages || [], success_messages: @success_messages || []  } %>
+
 <%= render partial: 'form', locals: {type_form: "Create New User"} %> 

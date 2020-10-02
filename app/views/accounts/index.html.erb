@@ -1,4 +1,4 @@
-<div> . </div>
+<%=render partial: "application/messages", locals: {danger_messages: @danger_messages || [], success_messages: @success_messages || []  } %>
 
 <% if @accounts.nil? %>
 
