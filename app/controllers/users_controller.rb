@@ -9,7 +9,6 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            @success_messages = "User created successfully."
             redirect_to accounts_path
         else
             @danger_messages = @user.errors.full_messages

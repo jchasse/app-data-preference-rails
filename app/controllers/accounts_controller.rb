@@ -2,9 +2,7 @@ class AccountsController < ApplicationController
     before_action :confirm_logged_in
 
     def index
-        if session[:user_id]
-            @accounts = User.find_by(id: session[:user_id]).accounts
-        end
+        @accounts = User.find_by(id: session[:user_id]).accounts
     end
 
     def new
@@ -27,6 +25,7 @@ class AccountsController < ApplicationController
     end
 
     def edit
+        byebug
         @account = Account.find_by(id: params[:id])
     end
 
