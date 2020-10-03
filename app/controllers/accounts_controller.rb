@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
     before_action :confirm_logged_in
+    before_action :set_account, except: [:new, :create, :index]
 
     def index
         @accounts = User.find_by(id: session[:user_id]).accounts
@@ -21,16 +22,14 @@ class AccountsController < ApplicationController
     end
 
     def show
-        @account = Account.find_by(id: params[:id])
+
     end
 
     def edit
         byebug
-        @account = Account.find_by(id: params[:id])
     end
 
     def update
-        @account = Account.find_by(id: params[:id])
         if @acccount.update(account_params)
             redirect_to account_path(@account)
         else
@@ -39,12 +38,15 @@ class AccountsController < ApplicationController
     end
 
     def destroy
-        @account = Account.find_by(id: params[:id])
         @account.delete
         redirect_to accounts_path
     end
 
     private
+
+    def set_account
+        @account = Account.find_by(id: params[:id])
+    end
 
     def account_params
         params.require(:account).permit(

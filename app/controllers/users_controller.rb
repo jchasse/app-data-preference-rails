@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to accounts_path
         else
-            @danger_messages = @user.errors.full_messages
+            @messages = @user.errors.full_messages
             render 'new'
         end
     end

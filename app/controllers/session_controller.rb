@@ -11,12 +11,13 @@ class SessionController < ApplicationController
             session[:user_id] = @user.id
             redirect_to accounts_path
         else
-            @errors = ["Username or password incorrect"]
+            @messages = ["Username or password incorrect"]
             render 'new'
         end
     end
 
     def create_with_fb
+        byebug
         @user = User.find_or_create_by(email: auth['email']) do |u|
             u.password = 'password' #update to random password generator before production
         end
