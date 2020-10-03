@@ -17,7 +17,6 @@ class SessionController < ApplicationController
     end
 
     def create_with_fb
-        byebug
         @user = User.find_or_create_by(email: auth['email']) do |u|
             u.password = 'password' #update to random password generator before production
         end

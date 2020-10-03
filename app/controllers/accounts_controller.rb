@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
 
     def new
         @account = Account.new
-        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media Username"]
+        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
         @account.digitalprints.build(user_id: session[:user_id])
     end
 
@@ -16,7 +16,8 @@ class AccountsController < ApplicationController
         @account = Account.find_or_create_account(account_params)
         if @account.save
             redirect_to account_path(@account)
-          else
+        else
+            @messages = @account.errors.full_messages
             render 'new'
         end
     end
