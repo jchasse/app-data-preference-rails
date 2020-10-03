@@ -10,14 +10,16 @@
         <div class="card-container text-center">   
             <div class="card text-center">
                 <div class="card-body">
-                    <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
+                    <%= link_to account.org_name, account_path(account), class:"btn btn-primary btn-sm btn-block"  %>
                     <hr class="light">
                     <p class="card-text"> Digitalprints </p>
                         <% account.digitalprints.each do|d| %>
                             <li> <%= d.kind %> </li>
                         <% end%>
                 </div>
-
+                <div class="card-footer">
+                    <%= link_to "Add digitalprint", new_account_digitalprint_path(account), class:"btn btn-secondary btn-sm btn-block"  %>
+                </div>
             </div>
         </div> 
 

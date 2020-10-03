@@ -5,7 +5,6 @@ class Account < ApplicationRecord
     validates_presence_of :org_name, :website, :toll_free_number
     validates_uniqueness_of :org_name
 
-
     accepts_nested_attributes_for :digitalprints
 
     def self.find_or_create_account(params)

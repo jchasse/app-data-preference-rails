@@ -1,0 +1,52 @@
+<h3 class="h3 text-center user-heading"> <%= type_form %> </h3>
+
+<%= form_for @digitalprint, url: form_url_helper(@account), html: {class: "main-form"} do |f| %>
+  
+  <!-- <%= f.hidden_field :user_id %> -->
+
+  <div class="form-group">
+    <p class="account-question"> What type of information is associated with your account?  </p>
+        <%= f.select :kind, @digitalprints, {} , class: "form-control" %>
+  </div>
+
+  <% if @account %>
+    <div class="form-group">
+      <label class= "form-control"> <%= @account.org_name  %> </label>
+    </div>
+
+  <% else %>
+
+    <div class="form-group">
+        <p class="account-question"> What account is associated with this digitalprint?  </p>
+        <%= f.fields_for :account do |a| %>
+        
+          <!-- <div class="form-group"></div>
+            <%= a.collection_select :org_name, Account.all, :org_name, :org_name, {}, class: "form-control" %>
+          </div> -->
+
+          <div class="form-group">
+            <%= a.text_field :org_name, list: "org_names_autocomplete", placeholder: "Organization", class: "form-control" %>
+                <datalist id="org_names_autocomplete">
+                    <% Account.all.each do |account| %>
+                    <option value= <%= "#{account.org_name}" %>
+                    <% end %>
+                </datalist>
+          </div>
+
+          <div class="form-group"> 
+            <%= a.text_field :website, class: "form-control", placeholder: "Website to submit data info requests" %>
+          </div>
+
+          <div class="form-group">   
+            <%= a.text_field :toll_free_number, class: "form-control", placeholder: "Toll free number for data info requests" %>
+          </div>
+
+        <% end %>
+    </div>
+  <% end %>
+
+  <div class="text-center"> 
+    <%= f.submit class:"btn btn-primary" %>
+  </div   
+
+<% end %>

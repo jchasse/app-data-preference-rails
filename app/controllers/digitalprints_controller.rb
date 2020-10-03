@@ -10,6 +10,7 @@ class DigitalprintsController < ApplicationController
     end
 
     def new
+        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
         if params[:account_id]
             @account = Account.find_by(id: params[:account_id])
             @digitalprint = @account.digitalprints.build
@@ -20,16 +21,17 @@ class DigitalprintsController < ApplicationController
     end
 
     def create
+        # byebug
         d = Digitalprint.new(digitalprint_params)
         d.user = current_user
         d.account_id = params[:account_id]
         d.save
-        redirect_to account_path(d.account)
+        redirect_to accounts_path
     end
 
     private
 
     def digitalprint_params
-        params.require(:digitalprint).permit(:kind, account_attributes: [:org_name, :website, :toll_free_number])
+        params.require(:digitalprint).permit(:kind, account_attributes: [:id, :org_name, :website, :toll_free_number])
     end
 end
