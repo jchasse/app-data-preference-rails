@@ -37,7 +37,7 @@
             <%= button_to 'Edit Account', edit_account_path(@account), method: :get, class:"btn btn-outline-light" %>
         </div>
         <div class="col-md-4"> 
-            "Add More"
+            <%= button_to 'Add Digitalprint', new_account_digitalprint_path(@account), method: :get, class:"btn btn-outline-light" %>
         </div>
         <div class="col-md-4"> 
             <%= button_to 'Delete Account', account_path(@account), method: :delete, class:"btn btn-primary" %> 

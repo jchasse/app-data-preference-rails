@@ -5,7 +5,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :website
       t.string :toll_free_number
 
-      t.timestamps
+      # t.timestamps
     end
   end
 end

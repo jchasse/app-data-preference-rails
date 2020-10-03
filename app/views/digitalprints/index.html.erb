@@ -1,9 +1,13 @@
-
-<%=form_tag digitalprints_path, method: :get do %>
-    <%=label_tag "Search by kind"%>
-    <%=text_field_tag :search%>
-    <%=submit_tag :search%>
-<%end%>
+<div class="search-form">
+    <%=form_tag digitalprints_path, method: :get, class: "main-form" do %>
+        <div class="form-group"> 
+            <%=text_field_tag :search, "Search for Digitalprint Category", class: "form-control" %>
+        </div>
+        <div class="text-center"> 
+            <%=submit_tag :search, class:"btn btn-primary" %>
+        </div>
+    <%end%>
+</div>
 
 <% if @digitalprints.nil? || @digitalprints == [] %>
 
@@ -16,27 +20,11 @@
         <div class="card-container text-center">   
             <div class="card text-center">
                 <div class="card-header">
-                    <h5 class="card-title"> <%= digitalprint.kind %> </h5>
+                    <h5> <%= digitalprint.kind %> </h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text"> <%= digitalprint.account.org_name %> </p>
-                    <p class="card-text"> <%= digitalprint.account.website %> </p>
-                    <p class="card-text"> <%= account.toll_free_number %> </p>
-                </div>
 
-                <div class="card-footer">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1"> Right to Know </label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                        <label class="custom-control-label" for="customSwitch2"> Right to Delete </label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                        <label class="custom-control-label" for="customSwitch3"> Right to Opt Out</label>
-                    </div>
                 </div>
 
             </div>

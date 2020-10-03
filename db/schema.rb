@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 2020_09_28_153851) do
     t.string "org_name"
     t.string "website"
     t.string "toll_free_number"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "digitalprints", force: :cascade do |t|
