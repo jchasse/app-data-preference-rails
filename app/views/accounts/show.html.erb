@@ -3,14 +3,33 @@
         <div class="col">
             <h5> Account Information </h5>
             <hr class="light">
-            <p> <%= @account.org_name %> </p>
-            <p> <%= @account.website %> </p>
-            <p> <%= @account.toll_free_number %> </p>
+            <p> Organization: <br>
+                <%= @account.org_name %> </p>
+            <p> Website to submit data info requests: <br>
+                <%= @account.website %> </p>
+            <p> Toll free number for data info requests: <br>
+                <%= @account.toll_free_number %> </p>
+        
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1"> Right to Know </label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                    <label class="custom-control-label" for="customSwitch2"> Right to Delete </label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                    <label class="custom-control-label" for="customSwitch3"> Right to Opt Out</label>
+                </div>
+                <br>
+            
             <hr class="light">
-            <h5> Digital Footprint </h5>
+            <h5> Associated Digitalprints </h5>
             <% @account.digitalprints.each do|d| %>
-                <p> <%= d.kind %> </p>
+                <li> <%= d.kind %> </li>
             <% end%>
+        
         </div>
     </div>
     <div class="row text-center">

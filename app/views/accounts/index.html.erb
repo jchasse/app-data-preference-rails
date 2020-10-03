@@ -9,27 +9,13 @@
 
         <div class="card-container text-center">   
             <div class="card text-center">
-                <div class="card-header">
-                    <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
-                </div>
                 <div class="card-body">
-                    <p class="card-text"> <%= account.website %> </p>
-                    <p class="card-text"> <%= account.toll_free_number %> </p>
-                </div>
-
-                <div class="card-footer">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1"> Right to Know </label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                        <label class="custom-control-label" for="customSwitch2"> Right to Delete </label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                        <label class="custom-control-label" for="customSwitch3"> Right to Opt Out</label>
-                    </div>
+                    <h5 class="card-title"> <%= link_to account.org_name, account_path(account) %> </h5>
+                    <hr class="light">
+                    <p class="card-text"> Digitalprints </p>
+                        <% account.digitalprints.each do|d| %>
+                            <li> <%= d.kind %> </li>
+                        <% end%>
                 </div>
 
             </div>
