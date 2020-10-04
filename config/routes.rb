@@ -14,14 +14,12 @@ Rails.application.routes.draw do
   # Models
    get '/signup' => 'users#new'
   
-   resources :users do
+   resources :users, except: [:index] do
     resources :accounts
   end
 
   resources :accounts do
-    resources :digitalprints
+    resources :digitalprints, only: [:new, :create]
   end
-
-  resources :digitalprints
 
 end

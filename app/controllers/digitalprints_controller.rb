@@ -1,10 +1,6 @@
 class DigitalprintsController < ApplicationController
     before_action :confirm_logged_in
 
-    def index
-        @digitalprints = User.find_by(id: session[:user_id]).digitalprints
-    end
-
     def new
         if params[:account_id]
             @account = Account.find_by(id: params[:account_id])

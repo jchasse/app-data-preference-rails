@@ -4,6 +4,9 @@ class Digitalprint < ApplicationRecord
 
     validates_uniqueness_of :kind
 
+    # validates :kind, uniqueness: { scope: :user,
+    # message: "update"}
+
     accepts_nested_attributes_for :account
 
     # def account_name=(org_name)
