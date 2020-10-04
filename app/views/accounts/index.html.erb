@@ -1,3 +1,14 @@
+<div class="search-form">
+    <%=form_tag accounts_path, method: :get, class: "main-form" do %>
+        <div class="form-group"> 
+            <%=text_field_tag :search, "Search for Organization", class: "form-control" %>
+        </div>
+        <div class="text-center"> 
+            <%=submit_tag :search, class:"btn btn-primary" %>
+        </div>
+    <%end%>
+</div>
+
 <% if @accounts == [] %>
 
     <h5 class="h5 text-center empty-index"> You have not loaded any digitalprints. Get started <%= link_to "here", new_account_path %>! </h5>
@@ -13,7 +24,7 @@
                     <%= link_to account.org_name, account_path(account), class:"btn btn-primary btn-sm btn-block"  %>
                     <hr class="light">
                     <p class="card-text"> Digitalprints </p>
-                        <% account.digitalprints.each do|d| %>
+                        <% account.digitalprints.each do |d| %>
                             <li> <%= d.kind %> </li>
                         <% end%>
                 </div>

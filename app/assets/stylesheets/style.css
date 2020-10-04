@@ -95,16 +95,16 @@ hr.light-100 {
     width:  600px;
     margin: auto;
     background-color: #343A40;
-    padding: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: white;
 }
 
 /* account */
 
 .card-container {
-    width: 30%;
+    width: 50%;
     margin: auto;
     background-color: #343A40;
     padding: 1rem;
@@ -122,7 +122,7 @@ hr.light-100 {
 }
 
 .empty-index {
-    padding: 2rem;
+    padding: .5rem;
 }
 
 .account-question {

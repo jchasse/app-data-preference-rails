@@ -4,11 +4,14 @@ class AccountsController < ApplicationController
 
     def index
         @accounts = User.find_by(id: session[:user_id]).accounts
+        if params[:search]
+            @accounts = @accounts.org_name_search(params[:search])
+        end
     end
 
     def new
         @account = Account.new
-        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
+        # @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
         @account.digitalprints.build(user_id: session[:user_id])
     end
 
@@ -27,7 +30,7 @@ class AccountsController < ApplicationController
     end
 
     def edit
-        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
+        # @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
     end
 
     def update

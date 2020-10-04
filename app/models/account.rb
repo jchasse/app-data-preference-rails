@@ -7,6 +7,8 @@ class Account < ApplicationRecord
 
     accepts_nested_attributes_for :digitalprints
 
+    scope :org_name_search, -> (search) { where("org_name >= ?", search) }
+
     def self.find_or_create_account(params)
         account = Account.find_by(org_name: params[:org_name])
         if !!account

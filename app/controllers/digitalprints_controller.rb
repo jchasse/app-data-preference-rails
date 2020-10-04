@@ -2,11 +2,7 @@ class DigitalprintsController < ApplicationController
     before_action :confirm_logged_in
 
     def index
-        if params[:search]
-            @digitalprints = Digitalprint.kind_search(params[:search])
-        else
-            @digitalprints = Digitalprint.all
-        end
+        @digitalprints = User.find_by(id: session[:user_id]).digitalprints
     end
 
     def new
