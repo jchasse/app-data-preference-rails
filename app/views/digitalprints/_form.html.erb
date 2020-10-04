@@ -6,7 +6,7 @@
 
   <div class="form-group">
     <p class="account-question"> What type of information is associated with your account?  </p>
-        <%= f.select :kind, @digitalprints, {} , class: "form-control" %>
+        <%= f.select :kind, digitalprint_options, {} , class: "form-control" %>
   </div>
 
   <% if @account %>

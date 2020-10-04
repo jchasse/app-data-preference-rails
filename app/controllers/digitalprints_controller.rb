@@ -10,7 +10,6 @@ class DigitalprintsController < ApplicationController
     end
 
     def new
-        # @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
         if params[:account_id]
             @account = Account.find_by(id: params[:account_id])
             @digitalprint = @account.digitalprints.build
