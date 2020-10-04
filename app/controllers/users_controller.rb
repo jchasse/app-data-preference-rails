@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :redirect_if_logged_in, only: [:new]
+    before_action :set_user, except: [:new, :create]
 
     def new
         @user = User.new
@@ -17,15 +18,14 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(id: params[:id]) #can this be tied to current_user?
+
     end
 
     def edit
-        @user = User.find_by(id: params[:id]) #can this be tied to current_user?
+
     end
 
     def update
-        @user = User.find_by(id: params[:id])
         if @user.update(user_params)
             redirect_to user_path(@user)
         else
@@ -34,12 +34,15 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        @user = User.find_by(id: params[:id])
         @user.delete
         redirect_to root_path
     end
 
     private
+
+    def set_user
+        @user = User.find_by(id: params[:id])
+    end
 
     def user_params
         params.require(:user).permit(
