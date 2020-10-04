@@ -22,13 +22,15 @@
     <div class="form-group">
       <p class="account-question"> What type of information is associated with your account?  </p>
         <%= f.fields_for :digitalprints do |d| %>
-            <%= d.select :kind, @digitalprints, {} , class: "form-control" %>
+          <div class="form-group">
+            <%= d.select :kind, digitalprint_options, {} , class: "form-control" %>
+          </div>
             <%= d.hidden_field :user_id %>
         <% end %>
     </div>
 
     <div class="text-center"> 
         <%= f.submit class:"btn btn-primary" %>
-    </div
+    </div>
 
 <% end %>

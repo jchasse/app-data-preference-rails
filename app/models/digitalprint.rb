@@ -14,4 +14,5 @@ class Digitalprint < ApplicationRecord
         self.account ? self.account.org_name : nil
     end
 
+
 end

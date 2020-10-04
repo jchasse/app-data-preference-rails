@@ -10,5 +10,12 @@ class User < ApplicationRecord
         first_name + " " + last_name unless first_name.nil? || last_name.nil?
     end
 
+    def self.google_users
+        includes(:accounts).where(accounts: { org_name: 'Google' })
+    end
+
+    def self.total_users
+        self.count
+    end
 
 end

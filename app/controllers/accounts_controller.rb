@@ -27,13 +27,14 @@ class AccountsController < ApplicationController
     end
 
     def edit
-        byebug
+        @digitalprints = ["Email", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
     end
 
     def update
-        if @acccount.update(account_params)
+        if @account.update(account_params)
             redirect_to account_path(@account)
         else
+            @messages = @account.errors.full_messages
             render 'edit'
         end
     end
@@ -54,7 +55,7 @@ class AccountsController < ApplicationController
             :org_name, 
             :website, 
             :toll_free_number,
-            digitalprints_attributes: [:kind, :user_id] 
+            digitalprints_attributes: [:kind, :id, :user_id] 
         )
     end
 end

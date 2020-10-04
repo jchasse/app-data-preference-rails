@@ -1,4 +1,43 @@
-<div id="slides" class="carousel slide" data-ride="carousel">
+
+<div class="container-fluid padding main-user-show">
+    <div class="row text-center">
+        <div class="col">
+            <h5> Plaform Users [<%=User.total_users%>] </h5>
+            <hr class="light">
+    
+            
+            <hr class="light">
+            <h5> Email Organizations [<%=Account.email_count %>] </h5>
+            <% Account.email_accounts.each do|e| %>
+                <li> <%= e.org_name %> </li>
+            <% end%>
+        
+        </div>
+    </div>
+    <div class="row text-center">
+        <% if !current_user %>
+            <div class="col-md-6">
+                <%= button_to 'SIGN UP', signup_path, method: "get", class:"btn btn-outline-light" %>
+            </div>
+            <div class="col-md-6"> 
+                <%= button_to 'LOGIN', login_path, method: "get", class:"btn btn-outline-light" %>
+            </div>
+        <% else %>
+            <div class="col-md-4">
+                <%= button_to 'DIGITALPRINTS', user_accounts_path(current_user), method: "get", class:"btn btn-outline-light" %>
+            </div>
+            <div class="col-md-4"> 
+                <%= button_to 'MY ACCOUNT', user_path(current_user),method: "get", class:"btn btn-outline-light" %>
+            </div>
+            <div class="col-md-4"> 
+                <%= button_to 'LOGOUT', logout_path, method: "get", class:"btn btn-outline-light" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+
+<!-- <div id="slides" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
         <li data-target="#slides" data-slide-to="1"></li>
@@ -21,4 +60,4 @@
             <%= image_tag "background3.png" %>
         </div>
     </div>
-</div>
+</div> -->
