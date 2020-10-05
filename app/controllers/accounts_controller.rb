@@ -3,7 +3,7 @@ class AccountsController < ApplicationController
     before_action :set_account, except: [:new, :create, :index]
 
     def index
-        @accounts = User.find_by(id: session[:user_id]).accounts
+        @accounts = User.find_by(id: session[:user_id]).accounts.distinct
         if params[:search]
             @accounts = @accounts.org_name_search(params[:search])
         end
@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
     end
 
     def create
+        byebug
         @account = Account.find_or_create_account(account_params)
         if @account.save
             redirect_to account_path(@account)
@@ -29,7 +30,7 @@ class AccountsController < ApplicationController
     end
 
     def edit
-        
+
     end
 
     def update

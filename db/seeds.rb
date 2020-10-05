@@ -7,10 +7,59 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 @user = User.create(first_name: "Max", last_name: "Charles", email: "max@test.com", mobile_number: "123-456-7890", password: "max")
-Account.create(org_name: "Google", website: "www.google.com", toll_free_number: "1-800-123-4567")
-Account.create(org_name: "Facebook", website: "www.facebook.com", toll_free_number: "1-800-123-4567")
-@user.digitalprints.build(kind: "Email", account_id: 1 )
+@account = Account.create(org_name: "Google", website: "google-legal-support@google.com", toll_free_number: "1-800-123-4567")
+@user.digitalprints.create(kind: "Email", account_id: @account.id)
 
+@user.digitalprints.create(kind: "Phone", account_id: @account.id)
+@user.digitalprints.create(kind: "Gender", account_id: @account.id)
+@user.digitalprints.create(kind: "Biometric", account_id: @account.id)
+@user.digitalprints.create(kind: "Birthdate", account_id: @account.id)
+@user.digitalprints.create(kind: "Employment Details", account_id: @account.id)
+@user.digitalprints.create(kind: "Credit Card", account_id: @account.id)
+
+
+@account2 = Account.create(org_name: "Facebook", website: "info@fb.com", toll_free_number: "1-800-123-0000")
+@user.digitalprints.create(kind: "Email", account_id: @account2.id)
+@user.digitalprints.create(kind: "Phone", account_id: @account2.id)
+@user.digitalprints.create(kind: "Biometric", account_id: @account2.id)
+@user.digitalprints.create(kind: "Birthdate", account_id: @account2.id)
+@user.digitalprints.create(kind: "Employment Details", account_id: @account2.id)
+@user.digitalprints.create(kind: "Social Media User", account_id: @account2.id)
+@user.digitalprints.create(kind: "Credit Card", account_id: @account2.id)
+@user.digitalprints.create(kind: "Gender", account_id: @account2.id)
+
+@account3 = Account.create(org_name: "Apple", website: "support@apple.com", toll_free_number: "1-800-123-4567")
+@user.digitalprints.create(kind: "Email", account_id: @account3.id)
+@user.digitalprints.create(kind: "Phone", account_id: @account3.id)
+@user.digitalprints.create(kind: "Biometric", account_id: @account3.id)
+@user.digitalprints.create(kind: "Birthdate", account_id: @account3.id)
+@user.digitalprints.create(kind: "Employment Details", account_id: @account3.id)
+@user.digitalprints.create(kind: "Social Media User", account_id: @account3.id)
+@user.digitalprints.create(kind: "Credit Card", account_id: @account3.id)
+@user.digitalprints.create(kind: "Gender", account_id: @account3.id)
+
+@account4 = Account.create(org_name: "Netflix", website: "privacy@netflix.com", toll_free_number: "1-800-123-4567")
+@user.digitalprints.create(kind: "Email", account_id: @account4.id)
+@user.digitalprints.create(kind: "Phone", account_id: @account4.id)
+@user.digitalprints.create(kind: "Credit Card", account_id: @account4.id)
+
+@account5 = Account.create(org_name: "Amazon", website: "privacyshield@amazon.com", toll_free_number: "1-800-123-4567")
+@user.digitalprints.create(kind: "Email", account_id: @account5.id)
+@user.digitalprints.create(kind: "Phone", account_id: @account5.id)
+@user.digitalprints.create(kind: "Biometric", account_id: @account5.id)
+@user.digitalprints.create(kind: "Birthdate", account_id: @account5.id)
+@user.digitalprints.create(kind: "Social Media User", account_id: @account5.id)
+@user.digitalprints.create(kind: "Credit Card", account_id: @account5.id)
+@user.digitalprints.create(kind: "Gender", account_id: @account5.id)
+
+
+
+["Email", "Gender", "Credit Card", "Phone Number","SSN", "Social Media User", "Biometric", "Birthdate", "Employment Details"]
+
+# geolocation, device IDs, identifying cookies, and browsing history
+# Supply-side platforms (or SSPs) collect user data to sell, ad exchanges organize auctions between them and advertisers, 
+# and demand-side platforms (or DSPs) “bid” on behalf of advertisers to decide which ads to show to which people
+# https://www.eff.org/deeplinks/2020/03/google-says-it-doesnt-sell-your-data-heres-how-company-shares-monetizes-and
 
 # DATA = {
 #   :user_keys =>
